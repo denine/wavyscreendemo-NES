@@ -7,7 +7,7 @@ nmi:
  
  inc global
  
- lda #<spriteblock
+ lda #>spriteblock	;do a sprite DMA
  sta dmafunc
  
  lda #$20

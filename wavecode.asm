@@ -4,9 +4,9 @@ dowaves:
  inc wavefrm		;increase wave offset
 @nope
  lda paralaxtbl,y
- sta scrollcon		;this write updates t horizontal component
+ sta $2005		;this write updates t horizontal component
 
- lda $2002			;this will reset scrollcon toggle
+ lda $2002			;this will reset $2005 toggle
  
  iny
  tya
@@ -28,7 +28,7 @@ dowaves:
  rts
 
 paralaxtbl:
- db $00,$00,$01,$01		;this table holds values we write to scrollcon.
+ db $00,$00,$01,$01		;this table holds values we write to $2005.
  db $02,$02,$03,$03
  db $04,$04,$05,$05
  db $06,$06,$07,$07

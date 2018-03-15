@@ -33,7 +33,7 @@ startmainloop
  lda #%10000000
  sta ppu0
  sta control0
- lda #%00011000
+ lda #%00011110
  sta ppu1		;setup ram values to be used in nmi handler
  
 infinite
