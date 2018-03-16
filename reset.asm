@@ -25,12 +25,16 @@ reset:
  bit $2002
  bpl @wait3
  
+ lda #$20
+ sta PPUADDR
  ldy #0
+ sty PPUADDR
 clearram:
 @2
  lda #0
 @1
  sta (addr),y
+ sta PPUDATA
  iny
  bne @1
 @3
@@ -38,6 +42,5 @@ clearram:
  lda addr+1
  cmp #8
  bne @2
- 
  
  jmp startmainloop
